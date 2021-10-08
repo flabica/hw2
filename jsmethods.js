@@ -95,7 +95,7 @@ Array.prototype.myIncludes = function(...args) {
 
 // INDEXOF //
 Array.prototype.myIndexOf = function (...args) {
-    for (let i = 0; i < this.length; ++i) {
+    for (let i = 0; i < this.length; i++) {
       if (this[i] === args) {
         return i;
       }
@@ -104,19 +104,25 @@ Array.prototype.myIndexOf = function (...args) {
   };
 
 // PUSH //
-    Array.prototype.myPush = function(...args) {
-        let arg_i = 0; 
-        let length = this.length; 
-        for (let i = length; i < length + args.length; i++) {
-            this[i] = args[arg_i]; 
-            arg_i++; 
-        }
-        return this.length; 
+Array.prototype.myPush = function(...args) {
+  let arg_i = 0; 
+  let length = this.length; 
+  for (let i = length; i < length + args.length; i++) {
+    this[i] = args[arg_i]; 
+    arg_i++; 
+  }
+  return this.length; 
 
-}
+}; 
 
 // LASTINDEXOF //
-Array.prototype.myLastIndexOf = function() {
+Array.prototype.myLastIndexOf = function(args) {
+  for (let i = this.length - 1; i >= 0; i--) {
+    if (this[i] === args) {
+      return i;
+    }
+  }
+  return -1;
 
 };
 
