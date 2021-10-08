@@ -11,7 +11,7 @@ Array.prototype.myMap = function(callbackFn) {
     let newMap = [] //new array to store
   
     for(let i = 0; i<this.length; i++){
-        newMap[i] = callbackFn(this[i]);
+        newMap[i] = callbackFn(this[i],i, this);
     }
     // return the new mapped array
     return newMap;
@@ -33,9 +33,18 @@ Array.prototype.myFilter = function(callbackFn) {
   };
 
 // SOME //
-Array.prototype.mySome = function() {
-
-};
+Array.prototype.mySome = function(callbackFn) {
+    // loop through the array that is passed in
+      for(let i = 0; i<this.length; i++) {
+        // if any element from the array satisfies the passed in function, return true
+          if(this[i] === callbackFn(this[i],i,this)){
+              return true;
+          }
+      }
+      // none of the elements satisfies the function,return false
+      return false;
+  
+  };
 
 // EVERY //
 Array.prototype.myEvery = function() {
@@ -83,3 +92,11 @@ Object.grabKeys = function() {
 Object.grabValues = function() {
 
 };
+
+const array1 = [1, 4, 9, 16];
+
+// pass a function to map
+const map1 = array1.myMap(x => x * 2);
+
+console.log(map1);
+// expected output: Array [2, 8, 18, 32]
