@@ -67,21 +67,27 @@ Array.prototype.myReduce = function() {
 
 // INCLUDES //
 Array.prototype.myIncludes = function(...args) {
-    for(let i=0; i<this.length; i++)
+    for(let i=0; i<this.length; i++)//going thru all the elements in the array/string 
     {
-        if (this[i]==args)
+        if (this[i]===args)
         {
-            return true; 
+            return true; // all of the elements satisfied the function, return true
         }
     }
+    // all of the elements satisfied the function, return false 
     return false; 
 
 };
 
 // INDEXOF //
-Array.prototype.myIndexOf = function() {
-
-};
+Array.prototype.myIndexOf = function (...args) {
+    for (let i = 0; i < this.length; ++i) {
+      if (this[i] === args) {
+        return i;
+      }
+    }
+    return -1;
+  };
 
 // PUSH //
     Array.prototype.myPush = function(...args) {
