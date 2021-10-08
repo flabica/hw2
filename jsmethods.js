@@ -7,8 +7,14 @@ Array.prototype.myEach = function(callbackFn) {
 };
 
 // MAP //
-Array.prototype.myMap = function() {
-
+Array.prototype.myMap = function(callbackFn) {
+    let newMap = [] //new array to store
+  
+    for(let i = 0; i<this.length; i++){
+        newMap[i] = callbackFn(this[i]);
+    }
+    // return the new mapped array
+    return newMap;
 };
 
 // FILTER //
