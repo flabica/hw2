@@ -94,7 +94,7 @@ Array.prototype.myIncludes = function(...args) {
 };
 
 // INDEXOF //
-Array.prototype.myIndexOf = function (...args) {
+Array.prototype.myIndexOf = function (args) {
     for (let i = 0; i < this.length; i++) {
       if (this[i] === args) {
         return i;
