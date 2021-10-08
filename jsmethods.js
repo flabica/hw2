@@ -61,9 +61,23 @@ Array.prototype.myEvery = function(callbackFn) {
 };
 
 // REDUCE //
-Array.prototype.myReduce = function() {
-
-};
+Array.prototype.myReduce = function(callbackFn, initialValue) {
+    // go through the array 
+    for (let i = 0; i < this.length; i++) {
+      // if the value is not undefined, accumulate all the elements in the array
+      if(initialValue != undefined){
+        initialValue = callbackFn(initialValue, this[i], i, this);
+      }
+      // else
+      else{
+        initialValue = this[i];
+      }
+  
+    }
+    // return 
+    return initialValue; 
+  };
+  
 
 // INCLUDES //
 Array.prototype.myIncludes = function(...args) {
