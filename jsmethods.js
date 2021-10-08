@@ -94,10 +94,10 @@ Array.prototype.myIncludes = function(...args) {
 };
 
 // INDEXOF //
-Array.prototype.myIndexOf = function (args) {
-    for (let i = 0; i < this.length; i++) {
+Array.prototype.myIndexOf = function (args) {//args seemed to work below when it was tested, so left as is 
+    for (let i = 0; i < this.length; i++) {//loop through this array 
       if (this[i] === args) {
-        return i;
+        return i; //return index 
       }
     }
     return -1;
@@ -107,7 +107,7 @@ Array.prototype.myIndexOf = function (args) {
 Array.prototype.myPush = function(...args) {
   let arg_i = 0; 
   let length = this.length; 
-  for (let i = length; i < length + args.length; i++) {
+  for (let i = length; i < length + args.length; i++) {//loop through this array 
     this[i] = args[arg_i]; 
     arg_i++; 
   }
@@ -117,35 +117,35 @@ Array.prototype.myPush = function(...args) {
 
 // LASTINDEXOF //
 Array.prototype.myLastIndexOf = function(args) {
-  for (let i = this.length - 1; i >= 0; i--) {
+  for (let i = this.length - 1; i >= 0; i--) {//loop through this array 
     if (this[i] === args) {
-      return i;
+      return i;//return index 
     }
   }
-  return -1;
+  return -1;//last index 
 
 };
 
 // KEYS //
 Object.grabKeys = function(obj) {
-  var keys =[]; 
-  for (var key in obj) 
+  var newArray =[]; 
+  for (var key in obj) //loop each key in the obj  
   {
-    keys.push(key); 
+    newArray.push(key); //push keys into the new array 
   }
-  return keys; 
+  return newArray; 
 };
 
 // VALUES //
 Object.grabValues = function(obj) {
-  var vals = []; 
-  for (var key in obj)
+  var newArray = []; 
+  for (var key in obj)//loop each key in the obj 
   {
     if(obj.hasOwnProperty(key))//this function returns a boolean of whether it has a key or not. 
     {
-      vals.push(obj[key]); 
+      newArray.push(obj[key]); //push keys into the new array
     }
   }
-  return vals; 
+  return newArray; 
 
 };
