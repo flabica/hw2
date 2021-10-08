@@ -66,7 +66,15 @@ Array.prototype.myReduce = function() {
 };
 
 // INCLUDES //
-Array.prototype.myIncludes = function() {
+Array.prototype.myIncludes = function(...args) {
+    for(let i=0; i<this.length; i++)
+    {
+        if (this[i]==args)
+        {
+            return true; 
+        }
+    }
+    return false; 
 
 };
 
