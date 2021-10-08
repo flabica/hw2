@@ -127,11 +127,25 @@ Array.prototype.myLastIndexOf = function(args) {
 };
 
 // KEYS //
-Object.grabKeys = function() {
-
+Object.grabKeys = function(obj) {
+  var keys =[]; 
+  for (var key in obj) 
+  {
+    keys.push(key); 
+  }
+  return keys; 
 };
 
 // VALUES //
-Object.grabValues = function() {
+Object.grabValues = function(obj) {
+  var vals = []; 
+  for (var key in obj)
+  {
+    if(obj.hasOwnProperty(key))//this function returns a boolean of whether it has a key or not. 
+    {
+      vals.push(obj[key]); 
+    }
+  }
+  return vals; 
 
 };
