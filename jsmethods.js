@@ -47,8 +47,17 @@ Array.prototype.mySome = function(callbackFn) {
   };
 
 // EVERY //
-Array.prototype.myEvery = function() {
-
+Array.prototype.myEvery = function(callbackFn) {
+    // loop through the array
+    for(let i = 0; i<this.length; i++) {
+      // if one of the element does not satisfy the passed in function,
+      // return false
+        if(!callbackFn(this[i],i,this)){
+            return false;
+        }
+    }
+    // all of the elements satisfied the function, return true
+    return true;
 };
 
 // REDUCE //
@@ -92,11 +101,3 @@ Object.grabKeys = function() {
 Object.grabValues = function() {
 
 };
-
-const array1 = [1, 4, 9, 16];
-
-// pass a function to map
-const map1 = array1.myMap(x => x * 2);
-
-console.log(map1);
-// expected output: Array [2, 8, 18, 32]
