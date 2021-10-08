@@ -18,9 +18,19 @@ Array.prototype.myMap = function(callbackFn) {
 };
 
 // FILTER //
-Array.prototype.myFilter = function() {
-
-};
+Array.prototype.myFilter = function(callbackFn) {
+    let filteredArray = [] //new array to store
+    // loop through the array given
+    for(let i = 0; i< this.length; i++){
+        // if the element matches with the function parameter,
+        // push the element into the new array
+        if(callbackFn(this[i],i,this)){
+            filteredArray.push(this[i]);
+        }
+    }
+    // return the new filtered Array
+    return filteredArray;
+  };
 
 // SOME //
 Array.prototype.mySome = function() {
